@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akhq
+  namespace: kafka-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: akhq
+  template:
+    metadata:
+      labels:
+        app: akhq
+    spec:
+      containers:
+      - name: akhq
+        image: tchiotludo/akhq:latest
+        resources:
+          requests:
+            cpu: "2000m"
+            memory: "4Gi"
+          limits:
+            cpu: "3000m"
+            memory: "6Gi"
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MICRONAUT_CONFIG_FILES
+          value: /etc/akhq/config/akhq-application.yml
+        volumeMounts:
+        - name: akhq-config-volume
+          mountPath: /etc/akhq/config/akhq-application.yml
+          subPath: akhq-application.yml
+      volumes:
+      - name: akhq-config-volume
+        configMap:
+          name: akhq-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: akhq-service
+  namespace: kafka-ui
+spec:
+  selector:
+    app: akhq
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

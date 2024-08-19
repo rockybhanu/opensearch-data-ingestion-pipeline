@@ -1,0 +1,68 @@
+micronaut:
+  security:
+    enabled: true
+    authentication: session
+
+akhq:
+  security:
+    default-group: reader
+    basic-auth:
+      - username: admin
+        password: "<ENTER_YOUR_HASHED_PASSWORD_SHA256SUM>"
+        passwordHash: SHA256
+        groups:
+          - admin
+      - username: reader
+        password: "<ENTER_YOUR_HASHED_PASSWORD_SHA256SUM>"
+        passwordHash: SHA256
+        groups:
+          - reader
+  connections:
+    kafka:
+      properties:
+        bootstrap.servers: "ramanuj-kafka-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092"
+  roles:
+    admin:
+      topics-filter-regexp: ".*"
+      connect-filter-regexp: ".*"
+      node-filter-regexp: ".*"
+      schema-registry-filter-regexp: ".*"
+      registry-group-filter-regexp: ".*"
+      connect-group-filter-regexp: ".*"
+      topic-group-filter-regexp: ".*"
+      consumer-group-filter-regexp: ".*"
+      operation:
+        topic:
+          - ALL
+        connect:
+          - ALL
+        node:
+          - ALL
+        registry:
+          - ALL
+        group:
+          - ALL
+        consumer-group:
+          - ALL
+    reader:
+      topics-filter-regexp: ".*"
+      connect-filter-regexp: ""
+      node-filter-regexp: ""
+      schema-registry-filter-regexp: ""
+      registry-group-filter-regexp: ".*"
+      connect-group-filter-regexp: ""
+      topic-group-filter-regexp: ".*"
+      consumer-group-filter-regexp: ".*"
+      operation:
+        topic:
+          - READ
+        connect:
+          - NONE
+        node:
+          - NONE
+        registry:
+          - NONE
+        group:
+          - READ
+        consumer-group:
+          - READ        

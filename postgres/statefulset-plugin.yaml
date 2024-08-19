@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+  namespace: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  serviceName: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - args:
+        - -c
+        - config_file=/etc/postgresql/postgresql.conf
+        envFrom:
+        - secretRef:
+            name: postgres-secret
+        image: debezium/postgres:16
+        name: postgres
+        ports:
+        - containerPort: 5432
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "2000m"
+            memory: "4Gi"
+          limits:
+            cpu: "3000m"
+            memory: "6Gi"         
+        volumeMounts:
+        - mountPath: /k8s/postgres
+          name: postgredb
+        - mountPath: /etc/postgresql/postgresql.conf
+          subPath: replica-postgres.conf
+          name: conf
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: postgredb
+        persistentVolumeClaim:
+          claimName: postgres-pv-claim
+      - name: conf
+        configMap:
+          name: postgres-config
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate

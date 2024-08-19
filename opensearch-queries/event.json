@@ -1,0 +1,967 @@
+{
+	"schema": {
+		"type": "struct",
+		"fields": [
+			{
+				"type": "string",
+				"optional": false,
+				"field": "id"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "account_created_date"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "account_last_updated"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "account_lock_reason"
+			},
+			{
+				"type": "boolean",
+				"optional": true,
+				"field": "account_locked"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"field": "account_manager_id"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "account_status"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "account_unlock_date"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "address_line1"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "address_line2"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "15"
+				},
+				"field": "annual_income"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "15"
+				},
+				"field": "average_cancellation_value"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "15"
+				},
+				"field": "average_cart_value"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "average_discount_rate"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"field": "average_order_time"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "15"
+				},
+				"field": "average_order_value"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "average_purchase_frequency"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "average_response_satisfaction_score"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"field": "average_response_time"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "15"
+				},
+				"field": "average_return_value"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "average_review_rating"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"field": "average_shipping_time"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"field": "average_ticket_resolution_time"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "cart_abandonment_rate"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "cart_conversion_rate"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "churn_prediction_score"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "city"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "contract_end_date"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "contract_renewal_date"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "contract_start_date"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "15"
+				},
+				"field": "contract_value"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "country"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "credit_score"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "customer_segment"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "customer_since"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "customer_tier"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"name": "io.debezium.time.Date",
+				"version": 1,
+				"field": "date_of_birth"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "delivery_failure_rate"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "delivery_success_rate"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "email"
+			},
+			{
+				"type": "boolean",
+				"optional": true,
+				"field": "email_verified"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "emergency_contact_name"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "emergency_contact_phone"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "emergency_contact_relationship"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"field": "failed_login_attempts"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "favorite_product_category"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "first_name"
+			},
+			{
+				"type": "boolean",
+				"optional": true,
+				"field": "fraud_alert"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "gender"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "15"
+				},
+				"field": "highest_order_value"
+			},
+			{
+				"type": "boolean",
+				"optional": true,
+				"field": "in_app_notifications_opt_in"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "last_cart_item_added_date"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "last_login"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "last_login_ip"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "last_name"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "last_password_change_date"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "last_password_change_ip"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "last_purchase_date"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "last_ticket_date"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "last_updated_by_system"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "last_updated_by_user"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "last_wishlist_item_added_date"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "15"
+				},
+				"field": "lifetime_value"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"field": "loyalty_points"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"field": "loyalty_program_id"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "marital_status"
+			},
+			{
+				"type": "boolean",
+				"optional": true,
+				"field": "marketing_opt_in"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "marketing_segment"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "most_purchased_product_category"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "net_promoter_score"
+			},
+			{
+				"type": "boolean",
+				"optional": true,
+				"field": "newsletter_subscribed"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"field": "number_of_cancellations"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"field": "number_of_children"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"field": "number_of_logins"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"field": "number_of_orders"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"field": "number_of_promo_codes_used"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"field": "number_of_returns"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "occupation"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "password_hash"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "password_last_reset"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "payment_failure_rate"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "payment_method_1"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "payment_method_1_details"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "payment_method_2"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "payment_method_2_details"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "payment_method_3"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "payment_method_3_details"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "payment_success_rate"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "phone_number"
+			},
+			{
+				"type": "boolean",
+				"optional": true,
+				"field": "phone_verified"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "preferred_billing_address"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "preferred_contact_method"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "preferred_contact_time"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "preferred_currency"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "preferred_language"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "preferred_shipping_address"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"field": "product_review_count"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "referral_conversion_rate"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"field": "referred_by_customer_id"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "registered_ip"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "5"
+				},
+				"field": "risk_score"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "sales_region"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"field": "sales_representative_id"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "security_answer_1"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "security_answer_2"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "security_answer_3"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "security_question_1"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "security_question_2"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "security_question_3"
+			},
+			{
+				"type": "boolean",
+				"optional": true,
+				"field": "sms_notifications_opt_in"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "social_media_login_id"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "social_media_login_provider"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "state"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "subscription_end_date"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"field": "subscription_plan_id"
+			},
+			{
+				"type": "int64",
+				"optional": true,
+				"name": "io.debezium.time.MicroTimestamp",
+				"version": 1,
+				"field": "subscription_start_date"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "subscription_status"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"field": "support_ticket_count"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "timezone"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "15"
+				},
+				"field": "total_discount_value"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "15"
+				},
+				"field": "total_purchase_value"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"field": "total_referrals"
+			},
+			{
+				"type": "bytes",
+				"optional": true,
+				"name": "org.apache.kafka.connect.data.Decimal",
+				"version": 1,
+				"parameters": {
+					"scale": "2",
+					"connect.decimal.precision": "15"
+				},
+				"field": "total_shipping_cost"
+			},
+			{
+				"type": "boolean",
+				"optional": true,
+				"field": "two_factor_enabled"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "two_factor_method"
+			},
+			{
+				"type": "int32",
+				"optional": true,
+				"field": "wish_list_item_count"
+			},
+			{
+				"type": "string",
+				"optional": true,
+				"field": "zip_code"
+			}
+		],
+		"optional": false,
+		"name": "crm_cdc.public.customer_records.Value"
+	},
+	"payload": {
+		"id": "462c5fbf-b67e-46e5-87bd-4b9319c0a946",
+		"account_created_date": 1591450550845944,
+		"account_last_updated": 910013750845944,
+		"account_lock_reason": "None",
+		"account_locked": false,
+		"account_manager_id": 592198441,
+		"account_status": "Suspended",
+		"account_unlock_date": 711120950846943,
+		"address_line1": "1234 Main St",
+		"address_line2": "Apt 800",
+		"annual_income": 6060760.29,
+		"average_cancellation_value": 83432.50,
+		"average_cart_value": 32908.08,
+		"average_discount_rate": 72.49,
+		"average_order_time": 297240186,
+		"average_order_value": 19763.87,
+		"average_purchase_frequency": 95.62,
+		"average_response_satisfaction_score": 44.28,
+		"average_response_time": 376709871,
+		"average_return_value": 44417.54,
+		"average_review_rating": 6.04,
+		"average_shipping_time": 921012575,
+		"average_ticket_resolution_time": 119510750,
+		"cart_abandonment_rate": 4.52,
+		"cart_conversion_rate": 2.80,
+		"churn_prediction_score": 36.60,
+		"city": "Phoenix",
+		"contract_end_date": 1538832950847923,
+		"contract_renewal_date": 770045750847923,
+		"contract_start_date": 515165750847923,
+		"contract_value": 163319.91,
+		"country": "UK",
+		"credit_score": 579.75,
+		"customer_segment": "Wholesale",
+		"customer_since": 614352950847923,
+		"customer_tier": "Bronze",
+		"date_of_birth": 5999,
+		"delivery_failure_rate": 24.71,
+		"delivery_success_rate": 66.30,
+		"email": "customer8be62d34@example.com",
+		"email_verified": true,
+		"emergency_contact_name": "EmergencyContact0d55b90e",
+		"emergency_contact_phone": "+1-920-448-5419",
+		"emergency_contact_relationship": "Friend",
+		"failed_login_attempts": 0,
+		"favorite_product_category": "Electronics",
+		"first_name": "FirstName1548db93",
+		"fraud_alert": true,
+		"gender": "Female",
+		"highest_order_value": 54276.64,
+		"in_app_notifications_opt_in": false,
+		"last_cart_item_added_date": 863444150849943,
+		"last_login": 1560519350849943,
+		"last_login_ip": "192.168.1.110",
+		"last_name": "LastNamed2190179",
+		"last_password_change_date": 1288964150849943,
+		"last_password_change_ip": "192.168.1.90",
+		"last_purchase_date": 541258550849943,
+		"last_ticket_date": 575127350849943,
+		"last_updated_by_system": 565709750849943,
+		"last_updated_by_user": 677943350849943,
+		"last_wishlist_item_added_date": 1705239350849943,
+		"lifetime_value": 47987.98,
+		"loyalty_points": 748145740,
+		"loyalty_program_id": 448142852,
+		"marital_status": "Single",
+		"marketing_opt_in": false,
+		"marketing_segment": "Loyalty Program",
+		"most_purchased_product_category": "Sports",
+		"net_promoter_score": 92.06,
+		"newsletter_subscribed": true,
+		"number_of_cancellations": 5,
+		"number_of_children": 0,
+		"number_of_logins": 9,
+		"number_of_orders": 86,
+		"number_of_promo_codes_used": 6,
+		"number_of_returns": 7,
+		"occupation": "Doctor",
+		"password_hash": "1aee8246cbe64e1c936e95a6ecf663c4",
+		"password_last_reset": 1556717750849943,
+		"payment_failure_rate": 2.17,
+		"payment_method_1": "Credit Card",
+		"payment_method_1_details": "**** **** **** 9977",
+		"payment_method_2": "PayPal",
+		"payment_method_2_details": "customer4b80f14b@paypal.com",
+		"payment_method_3": "Bank Transfer",
+		"payment_method_3_details": "Bank Account: 207785238",
+		"payment_success_rate": 12.75,
+		"phone_number": "+1-493-815-3131",
+		"phone_verified": false,
+		"preferred_billing_address": "1234 Billing St, Apt 922",
+		"preferred_contact_method": "Phone",
+		"preferred_contact_time": "9 AM - 5 PM",
+		"preferred_currency": "INR",
+		"preferred_language": "German",
+		"preferred_shipping_address": "5678 Shipping St, Apt 778",
+		"product_review_count": 79,
+		"referral_conversion_rate": 83.16,
+		"referred_by_customer_id": 489220635,
+		"registered_ip": "192.168.1.65",
+		"risk_score": 77.54,
+		"sales_region": "IL",
+		"sales_representative_id": 16959321,
+		"security_answer_1": "01991375",
+		"security_answer_2": "e88e98f9",
+		"security_answer_3": "3472d94b",
+		"security_question_1": "What was the name of your first school?",
+		"security_question_2": "What was the name of your first pet?",
+		"security_question_3": "What was the name of your first school?",
+		"sms_notifications_opt_in": false,
+		"social_media_login_id": "265c44d1",
+		"social_media_login_provider": "Provider4",
+		"state": "TX",
+		"subscription_end_date": 481383350850922,
+		"subscription_plan_id": 461116679,
+		"subscription_start_date": 1415367350850922,
+		"subscription_status": "Pending",
+		"support_ticket_count": 23,
+		"timezone": "UTC4",
+		"total_discount_value": 541326.21,
+		"total_purchase_value": 242210.71,
+		"total_referrals": 46,
+		"total_shipping_cost": 554202.18,
+		"two_factor_enabled": true,
+		"two_factor_method": "SMS",
+		"wish_list_item_count": 12,
+		"zip_code": "16132"
+	}
+}

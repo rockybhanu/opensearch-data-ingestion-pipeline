@@ -1,0 +1,60 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaConnect
+metadata:
+  name: ramanuj-connect-cluster
+  namespace: kafka
+  annotations:
+    strimzi.io/use-connector-resources: "true"  
+spec:
+  version: 3.7.1
+  replicas: 1
+  bootstrapServers: ramanuj-kafka-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
+  externalConfiguration:
+    volumes:
+    - name: postgres-secret
+      secret:
+        secretName: postgres-source-connector-secret
+    - name: opensearch-secret
+      secret:
+        secretName: opensearch-sink-connector-secret
+    - name: opensearch-truststore-secret
+      secret:
+        secretName: opensearch-truststore-secret
+  config:
+    config.providers: file
+    config.providers.file.class: org.apache.kafka.common.config.provider.FileConfigProvider
+    config.storage.topic: connect-cluster-configs
+    offset.storage.topic: connect-cluster-offsets
+    status.storage.topic: connect-cluster-status
+    config.storage.replication.factor: 1
+    offset.storage.replication.factor: 1
+    status.storage.replication.factor: 1
+  resources:
+    requests:
+      cpu: "2000m"
+      memory: "4Gi"
+    limits:
+      cpu: "3000m"
+      memory: "6Gi"
+  jvmOptions:
+    -Xms: "2G"
+    -Xmx: "4G"
+  build:
+    output:
+      type: docker
+      image: padminisys/ramanuj-db-opensearch-connector:v1
+      pushSecret: docker-padminisys-secret
+    plugins:
+      - name: debezium-postgres-connector
+        artifacts:
+          - type: "tgz"
+            url: "https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/2.7.1.Final/debezium-connector-postgres-2.7.1.Final-plugin.tar.gz"
+      - name: opensearch-sink-connector
+        artifacts:
+          - type: "zip"
+            url: "https://github.com/Aiven-Open/opensearch-connector-for-apache-kafka/releases/download/v3.1.1/opensearch-connector-for-apache-kafka-3.1.1.zip"
+  template:
+    connectContainer:
+      env:
+        - name: CONNECT_HEAP_OPTS
+          value: "-Xms2G -Xmx4G"

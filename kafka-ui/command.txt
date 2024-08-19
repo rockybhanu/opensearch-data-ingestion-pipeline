@@ -1,0 +1,3 @@
+kubectl create configmap akhq-config --from-file=akhq-application.yml -n kafka-ui
+
+kubectl create ingress -n kafka-ui akhq-ingress --class=nginx --rule="kafka.ramanuj.dev/*=akhq-service:80,tls=akhq-tls-secret" --annotation cert-manager.io/cluster-issuer=letsencrypt-prod

@@ -1,0 +1,32 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaConnector
+metadata:
+  name: debezium-postgres-connector
+  namespace: kafka
+  labels:
+    strimzi.io/cluster: ramanuj-connect-cluster
+spec:
+  class: io.debezium.connector.postgresql.PostgresConnector
+  tasksMax: 1
+  config:
+    connector.class: io.debezium.connector.postgresql.PostgresConnector
+    database.hostname: postgres.postgres.svc.cluster.local
+    database.port: "5432"
+    database.user: ${file:/opt/kafka/external-configuration/postgres-secret/postgres.properties:user}
+    database.password: ${file:/opt/kafka/external-configuration/postgres-secret/postgres.properties:password}
+    database.dbname: crm
+    topic.prefix: crm_cdc
+    database.server.name: crm
+    table.include.list: public.customer_records
+    database.history.kafka.bootstrap.servers: ramanuj-kafka-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
+    database.history.kafka.topic: schema-changes.customer_records
+    include.schema.changes: "false"
+    plugin.name: decoderbufs
+    transforms: unwrap,insertKey
+    transforms.unwrap.type: io.debezium.transforms.ExtractNewRecordState
+    transforms.insertKey.type: org.apache.kafka.connect.transforms.ValueToKey
+    transforms.insertKey.fields: id
+    key.converter: org.apache.kafka.connect.storage.StringConverter
+    value.converter: org.apache.kafka.connect.json.JsonConverter
+    value.converter.schemas.enable: true
+    value.converter.decimal.format: numeric
